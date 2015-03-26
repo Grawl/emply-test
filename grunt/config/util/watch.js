@@ -44,7 +44,7 @@ var taskConfig = function(grunt) {
       tasks: [
         'injector:sass',
         'sass:server',
-        'autoprefixer:server'
+        'postcss:server'
       ]
     },
     injectCss: {

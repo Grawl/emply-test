@@ -14,7 +14,7 @@ var taskConfig = function(grunt) {
     'useminPrepare',
     'concat:generated',
     'cssmin',
-    'autoprefixer:server',
+    'postcss:server',
     'usemin',
     'htmlmin:dist',
     'uglify',

@@ -21,7 +21,7 @@ var taskConfig = function(grunt) {
       'wiredep',
       'jade:server',
       'sass:server',
-      'autoprefixer:server'
+      'postcss:server'
     ]);
 
     if (target === 'nowatch') {
