@@ -12,7 +12,7 @@
 			size: $small-font-size
 	&-large
 		font:
-			size: 16pt
+			size: 15pt
 hr
 	&.arrow
 		$color: gray
@@ -48,6 +48,10 @@ hr
 		padding-left: 0
 .aside
 	&-small
-		width: grid-calc(1.3, $total-columns)
-		margin:
-			right: $column-gutter/2
+		@media #{$medium-up}
+			width: grid-calc(1.2, $total-columns)
+			margin:
+				right: $column-gutter
+		@media #{$large-up}
+			margin:
+				right: $column-gutter/2
