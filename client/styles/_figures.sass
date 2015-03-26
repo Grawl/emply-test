@@ -1,7 +1,17 @@
 .figure
 	&-align
 		&-right
-			float: right
+			@media #{$large-up}
+				float: right
+				margin:
+					right: 0
+			@extend %figure-aligned-default
+		&-left
+			@media #{$large-up}
+				float: left
+				margin:
+					left: 0
+			@extend %figure-aligned-default
 	&-small
 		margin:
 			left: 0
@@ -15,11 +25,15 @@
 %figcaption-outside
 	position: absolute
 	width: 11em
+	text-align: left
 .figcaption
 	&-outside
 		&-container
 			position: relative
 			@extend %firure-small-figcaption-outside-container
+			&%foo
+				margin:
+					left: 50%
 		&-content
 			position: absolute
 			width: 100%
@@ -35,6 +49,7 @@
 			%figcaption-outside-top-content
 				bottom: 100%
 				left: -50%
+			@extend %figcaption-outside-top-unaligned
 		&-left
 			@extend %figcaption-outside
 			top: 1em
@@ -48,3 +63,10 @@
 				left: 0
 				%figcaption-outside-bottom-left-content
 					left: -80%
+%figure-aligned-default
+	@media (max-width: #{lower-bound($large-range)})
+		float: none
+		@extend %foo
+	%figcaption-outside-top-unaligned
+		margin:
+			left: -40%

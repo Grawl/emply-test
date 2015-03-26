@@ -1,0 +1,27 @@
+#collider-depth
+	position: relative
+	@media #{$large-up}
+		position: absolute
+		top: -$body-offset-top
+		right: $column-gutter/2
+		height: 340px
+		width: width('photo-collider.jpg')
+	&-inner
+		@media #{$large-up}
+			position: absolute
+			top: 33%
+		margin:
+			left: 50%
+		padding:
+			left: 0.5em
+	&-arrow
+		@media (max-width: #{lower-bound($large-range)})
+			position: absolute
+			left: 43%
+			top: 0
+			width: 40px
+		@media #{$large-up}
+			position: absolute
+			left: -30%
+			top: 44%
+			width: 332px

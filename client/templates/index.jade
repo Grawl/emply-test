@@ -2,38 +2,39 @@
 extends ./layouts/base
 block content
 	.row
-		.medium-3.columns
-			aside
-				figure.figure-align-right.figure-small.figcaption-outside-container
-					img(src='images/vader.jpg')
-					figcaption.figcaption-outside-top
-						p.figcaption-outside-content
-							| Когда там
-							=' '
-							a(href='#modal-01').link-modal конец света
-							| ?
-					figcaption.figcaption-outside-left
-						p.figcaption-outside-content
-							| Большой секрет
-							=' '
-							a(href='#modal-02').link-modal чёрной материи
-							| .
-					figcaption.figcaption-outside-bottom-left
-						p.figcaption-outside-content
-							| Куда пропало
-							=' '
-							a(href='#modal-03').link-modal антивещество
-							| ?
-		.medium-9.columns
+		aside.large-3.columns
+			figure.figure-align-right.figure-small.figcaption-outside-container
+				img(src='images/vader.jpg')
+				figcaption.figcaption-outside-top
+					p.figcaption-outside-content
+						| Когда там
+						=' '
+						a(href='#modal-01').link-modal конец света
+						| ?
+				figcaption.figcaption-outside-left
+					p.figcaption-outside-content
+						| Большой секрет
+						=' '
+						a(href='#modal-02').link-modal чёрной материи
+						| .
+				figcaption.figcaption-outside-bottom-left
+					p.figcaption-outside-content
+						| Куда пропало
+						=' '
+						a(href='#modal-03').link-modal антивещество
+						| ?
+		main.large-9.columns
 			p Если бы вы вдруг начали копать яму прямо в центре небольшой французской деревни Крозе, то уже через 90 метров смогли бы попасть в место, напоминающее логово злодея. Ярко освещенный тоннель уходит вдаль, прерываясь каждые несколько километров высокими сооружениями, с низу до верху заполненными тяжелыми стальными конструкциями, тросами,трубами, проводами, магнитами и различными загадочными устройствами.
+			aside#collider-depth
+				hr.arrow.arrow-vertical#collider-depth-arrow
+				#collider-depth-inner
+					p.text-small Тоннель проходит на глубине от 50 до 150 метров.
+					p.text-small
+						a(href='#modal-04') Зачем закапывали?
 	.row
 		.columns
-			aside#collider-depth
-				p Тоннель проходит на глубине от 50 до 150 метров.
-				p
-					a(href='#modal-04') Зачем закапывали?
 			h1 Это и есть Большой адронный коллайдер.
-			figure.align-right
+			figure.figure-align-right
 				img(src='images/photo-collider.jpg').image-rounded
 				figcaption
 					a(href='#modal-05') Другие фотографии

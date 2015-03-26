@@ -6,3 +6,31 @@
 .link
 	&-modal
 		border-bottom: 1px dashed
+.text
+	&-small
+		font:
+			size: $small-font-size
+hr
+	&.arrow
+		$color: gray
+		border-color: $color
+		position: relative
+		&::before, &::after
+			content: ''
+			display: block
+			position: absolute
+			$size: 20px
+			top: -$size/2
+			width: $size
+			height: $size
+			border: 1px solid $color
+			clip: rect(auto, $size/2, $size/2, auto)
+		&::before
+			left: 3px
+			transform: rotate(-45deg)
+		&::after
+			right: 3px
+			transform: rotate(135deg)
+		&-vertical
+			transform: rotate(90deg)
+			top: 50%
