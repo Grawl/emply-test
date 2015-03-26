@@ -1,3 +1,7 @@
+figure
+	img
+		margin:
+			bottom: 0.5em
 .figure
 	&-align
 		&-right
@@ -24,7 +28,7 @@
 				bottom: 5em
 %figcaption-outside
 	position: absolute
-	width: 11em
+	width: 10em
 	text-align: left
 .figcaption
 	&-outside
@@ -67,6 +71,6 @@
 	@media (max-width: #{lower-bound($large-range)})
 		float: none
 		@extend %foo
-	%figcaption-outside-top-unaligned
-		margin:
-			left: -40%
+		%figcaption-outside-top-unaligned
+			margin:
+				left: -40%
