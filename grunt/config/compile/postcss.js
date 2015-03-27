@@ -22,7 +22,7 @@ var taskConfig=function(grunt){
 			options: {
 				map: false
 			},
-			src: '<%= yeogurt.dist %>/*.css'
+			src: '<%= yeogurt.dist %>/styles/*.css'
 		}
 	});
 };
