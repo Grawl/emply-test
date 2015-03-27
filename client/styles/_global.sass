@@ -4,6 +4,7 @@
   box-sizing: border-box
 html, body
 	height: auto
+	overflow-x: hidden
 body
 	padding:
 		top: $body-offset-top
@@ -11,6 +12,9 @@ body
 p
 	max-width: 33.4rem
 h1
-	font-size: 28pt
+	@media #{$medium-up}
+		font-size: 28pt
+	@media #{$small-only}
+		font-size: 20pt
 	margin:
 		bottom: 1em

@@ -16,6 +16,7 @@ $paragraph-font-size: 0.98rem
 // Extend
 $row-offset: 4rem
 .row
-	padding:
-		left: $row-offset
-		right: $row-offset
+	@media #{$medium-up}
+		padding:
+			left: $row-offset
+			right: $row-offset
