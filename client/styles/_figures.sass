@@ -1,18 +1,24 @@
+%figure-aligned-default
+	@media (max-width: #{lower-bound($large-range)})
+		float: none
+		@extend %foo
+		%figcaption-outside-top-unaligned
+			margin:
+				left: -40%
 figure
 	img
 		margin:
 			bottom: 0.5em
 .figure
 	&-align
-		@each $media in ($large-up, $medium-up, $small-up)
-			@each $size in ('large', 'medium', 'small')
-				@each $side in ('right', 'left')
-					&-#{$side}
-						&-#{$size}
-							@media #{$media}
-								float: unquote($side)
-								margin-#{$side}: 0
-							@extend %figure-aligned-default
+		@each $side in ('left', 'right')
+			&-#{$side}
+				@each $size, $media in (('large', $large-up), ('medium', $medium-up), ('small', $small-up))
+					&-#{$size}
+						@media #{$media}
+							float: unquote($side)
+							margin-#{$side}: 0
+						@extend %figure-aligned-default
 	&-small
 		margin-top: 0
 		@extend %figure-fit
@@ -117,10 +123,3 @@ figure
 						border-left: 1px solid gray
 
 						z-index: -1
-%figure-aligned-default
-	@media (max-width: #{lower-bound($large-range)})
-		float: none
-		@extend %foo
-		%figcaption-outside-top-unaligned
-			margin:
-				left: -40%
