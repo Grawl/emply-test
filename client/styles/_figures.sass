@@ -80,22 +80,23 @@ figure
 		&-item
 			@extend %row-item
 		&-row
-			display: table
-			%row-item
-				display: table-cell
-				float: none !important
-				position: relative
-				&::before
-					content: ''
-					display: block
-					position: absolute
-					left: $column-gutter/2
-					$height: $offset
-					bottom: -($height + 0.5)
-					height: $height
-					border-left: 1px solid gray
+			@media #{$medium-up}
+				display: table
+				%row-item
+					display: table-cell
+					float: none !important
+					position: relative
+					&::before
+						content: ''
+						display: block
+						position: absolute
+						left: $column-gutter/2
+						$height: $offset
+						bottom: -($height + 0.5)
+						height: $height
+						border-left: 1px solid gray
 
-					z-index: -1
+						z-index: -1
 %figure-aligned-default
 	@media (max-width: #{lower-bound($large-range)})
 		float: none
