@@ -22,8 +22,12 @@
 		&, p
 			font-size: 15pt
 	&-compress
+		$width: 80%
 		@media #{$large-up}
-			width: 80%
+			width: $width
+		&-small
+			@media #{$small-range}
+				width: $width
 hr
 	&.arrow
 		$color: gray
@@ -66,3 +70,7 @@ hr
 		@media #{$large-up}
 			margin:
 				right: $column-gutter/2
+.offset
+	margin:
+		top: $column-gutter
+		bottom: $column-gutter

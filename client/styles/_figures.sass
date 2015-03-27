@@ -4,23 +4,18 @@ figure
 			bottom: 0.5em
 .figure
 	&-align
-		&-right
-			@media #{$large-up}
-				float: right
-				margin:
-					right: 0
-			@extend %figure-aligned-default
-		&-left
-			@media #{$large-up}
-				float: left
-				margin:
-					left: 0
-			@extend %figure-aligned-default
+		@each $media in ($large-up, $medium-up, $small-up)
+			@each $size in ('large', 'medium', 'small')
+				@each $side in ('right', 'left')
+					&-#{$side}
+						&-#{$size}
+							@media #{$media}
+								float: unquote($side)
+								margin-#{$side}: 0
+							@extend %figure-aligned-default
 	&-small
-		margin:
-			left: 0
-			right: 0
-			top: 0
+		margin-top: 0
+		@extend %figure-fit
 		img
 			max-width: 80px
 		&%firure-small-figcaption-outside-container
@@ -33,6 +28,31 @@ figure
 			right: $offset
 		img
 			width: 100%
+	&-fit
+		@extend %figure-fit
+	&-outside
+		&-container
+			position: relative
+		@media #{$large-up}
+			&-left
+				@extend %figure-outside
+				img
+					margin:
+						left: -100%
+						right: $column-gutter/2
+			&-right
+				@extend %figure-outside
+				img
+					margin:
+						right: -100%
+						left: $column-gutter/2
+%figure-fit
+	margin:
+		left: 0
+		right: 0
+%figure-outside
+	@media #{$large-up}
+		position: absolute
 %figcaption-outside
 	position: absolute
 	width: 10em
