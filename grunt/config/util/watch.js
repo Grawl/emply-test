@@ -23,20 +23,10 @@ var taskConfig = function(grunt) {
     },
     jade: {
       files: [
-        '<%= yeogurt.client %>/templates/*.jade'
+        '<%= yeogurt.client %>/templates/**/*.jade'
       ],
       tasks: [
         'newer:jade:server'
-      ]
-    },
-    jadePartials: {
-      files: [
-        '<%= yeogurt.client %>/templates/**/*.jade',
-        '!<%= yeogurt.client %>/templates/*.jade'
-      ],
-      tasks: [
-        'injector:jade',
-        'jade:server'
       ]
     },
     sass: {
@@ -84,7 +74,7 @@ var taskConfig = function(grunt) {
       ]
     }
   };
-  
+
 
   grunt.config.set('watch', config);
 
