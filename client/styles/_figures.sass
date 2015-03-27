@@ -13,7 +13,7 @@ figure
 	&-align
 		@each $side in ('left', 'right')
 			&-#{$side}
-				@each $size, $media in (('large', $large-up), ('medium', $medium-up), ('small', $small-up))
+				@each $size, $media in ('large', $large-up), ('medium', $medium-up), ('small', $small-up)
 					&-#{$size}
 						@media #{$media}
 							float: unquote($side)
