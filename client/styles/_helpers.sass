@@ -8,11 +8,22 @@
 		border-bottom: 1px dashed
 .text
 	&-small
-		font:
-			size: $small-font-size
+		&, p
+			font:
+				size: $small-font-size
+				family: $font-family-sans-serif
+		h1
+			font-size: $h1-font-size - $h1-font-reduction * 2
+		h2
+			font-size: $h2-font-size - $h2-font-reduction * 1.6
+		h3
+			font-size: $h3-font-size - $h3-font-reduction * 2
 	&-large
-		font:
-			size: 15pt
+		&, p
+			font-size: 15pt
+	&-compress
+		@media #{$large-up}
+			width: 80%
 hr
 	&.arrow
 		$color: gray

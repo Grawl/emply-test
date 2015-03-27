@@ -26,6 +26,13 @@ figure
 		&%firure-small-figcaption-outside-container
 			margin:
 				bottom: 5em
+	&-fullwidth
+		$offset: -($column-gutter/2 + $row-offset)
+		margin:
+			left: $offset
+			right: $offset
+		img
+			width: 100%
 %figcaption-outside
 	position: absolute
 	width: 10em
@@ -67,6 +74,28 @@ figure
 				left: 0
 				%figcaption-outside-bottom-left-content
 					left: -80%
+	&-group
+		$offset: $column-gutter
+		margin-bottom: $offset !important
+		&-item
+			@extend %row-item
+		&-row
+			display: table
+			%row-item
+				display: table-cell
+				float: none !important
+				position: relative
+				&::before
+					content: ''
+					display: block
+					position: absolute
+					left: $column-gutter/2
+					$height: $offset
+					bottom: -($height + 0.5)
+					height: $height
+					border-left: 1px solid gray
+
+					z-index: -1
 %figure-aligned-default
 	@media (max-width: #{lower-bound($large-range)})
 		float: none
